@@ -4,6 +4,7 @@
 body {
     background-image: url(background2.png);
     margin: 0px;
+    max-width: 100%;
 }
 
 header {
@@ -11,12 +12,20 @@ header {
     color: red;
 }
 
-.container {
+.container, #headbar{
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+#registration{
     max-width: 1500px;
     margin: auto;
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 
@@ -31,7 +40,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 #logotype {
     display: block;
-    max-width: 400px;
+    max-width: 380px;
 }
 
 header ul {
@@ -60,7 +69,7 @@ header ul li a:hover{
     }
 
     #content {
-        width: 76%;
+        width: 73%;
     }
     
     #main {
@@ -147,6 +156,7 @@ header ul li a:hover{
     
     footer {
         width: 100%;
+        flex-wrap: wrap;
         background: #2e57a3;
         color:red; 
         padding: 15px 15px 15px 15px;
@@ -210,4 +220,60 @@ header ul li a:hover{
     
     .social-links {
         padding-left: 100px;
+    }
+
+    @media (max-width: 1375px) {
+        .product {
+            width: 32%;
+        }
+    }
+    
+    @media (max-width: 1323px) {
+       header .container, #registration, #headbar {
+           flex-wrap: wrap;
+           justify-content: center;
+       }
+    
+       header ul {
+           flex-direction: column;
+           width: 100%;
+           text-align: center;
+       }
+    }
+    
+    @media (max-width: 1118px) {
+       .product {
+           width: 47%;
+       }
+       #sidebar {
+           width: 30%;
+       }
+       #content {
+           width: 60%;
+       }
+    }
+    
+    @media (max-width: 867px) {
+    #sidebar {
+        width: 100%;
+    }
+    #content {
+        width: 100%;
+    }
+    #sidebar, #content {
+        text-align: center;
+    }
+    }
+    
+    @media (max-width: 827px) {
+    footer > div.container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer > div.container > div {
+        text-align: center;
+        padding-left: 0;
+        margin: 10px;
     }
